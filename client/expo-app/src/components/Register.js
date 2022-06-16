@@ -1,5 +1,6 @@
 import React from "react";
 import {useRef, useState, useEffect} from 'react';
+import axios from 'axios';
 
 // validasi dengan regex
 /*  nama hanya dapat menampung huruf besar dan kecil, minimal 4 karakter maksimal 100 karakter
@@ -74,7 +75,7 @@ const Register = () => {
     }, [password]);
 
     // handle untuk submit
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         
         const v1 = NAME_REGEX.test(name);
@@ -86,6 +87,13 @@ const Register = () => {
         if (!v1 || !v2 || !v3 || !v4) {
             alert('Form tidak valid');
         }
+
+        // try {
+        //     await axios.post('http://localhost:8080/api/register', {
+        //         username: user
+        //     })
+        //     // ganti halaman
+        // }
     }
 
     return (
