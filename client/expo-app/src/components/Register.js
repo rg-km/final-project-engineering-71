@@ -88,12 +88,20 @@ const Register = () => {
             alert('Form tidak valid');
         }
 
-        // try {
-        //     await axios.post('http://localhost:8080/api/register', {
-        //         username: user
-        //     })
-        //     // ganti halaman
-        // }
+        try {
+            await axios.post('http://localhost:8080/api/register', {
+                name: name,
+                email: email,
+                password: password,
+                username: user,
+                asal: '-',
+                phone_number: '-'
+            })
+            console.log('berhasil');
+            // ganti halaman
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return (
