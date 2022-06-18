@@ -1,5 +1,9 @@
+import Card from './components/Card';
 import './App.css';
-
+import './index.css';
+import React from 'react';
+import "./App.css";
+import Navbar from "./components/Navbar";
 import FormRegis from './Pages/Form_Regis';
 import Login from './Pages/Form_login';
 
@@ -13,6 +17,8 @@ function App() {
         <Route path='/regis' element={<FormRegis />}/>
         <Route path='/login' element={<Login />}/>
       </Routes>
+      <Card />
+      <Navbar />
     </div>
   );
 }

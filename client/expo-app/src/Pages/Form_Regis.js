@@ -2,7 +2,7 @@ import React from 'react';
 
 // import picture
 import logo from '../logo.svg';
-import pict from '../Asset/2868886.jpg';
+import pict from '../assets/2868886.jpg';
 import RegisInput from '../components/Register'
 
 // css file
