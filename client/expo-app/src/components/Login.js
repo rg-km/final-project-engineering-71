@@ -23,7 +23,7 @@ const login = () => {
                 <p>
                     Already have an account ?  
                     <span className="line">
-                        <a href="#">  Sign Up</a>
+                        <a href="/regis">  Sign Up</a>
                     </span>
                 </p>
             </form>

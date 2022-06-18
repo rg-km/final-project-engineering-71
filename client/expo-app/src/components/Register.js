@@ -99,6 +99,7 @@ const Register = () => {
             })
             console.log('berhasil');
             // ganti halaman
+            
         } catch (error) {
             console.log(error);
         }
@@ -191,7 +192,7 @@ const Register = () => {
                 <p>
                     Already have an account ?
                     <span className="line">
-                        <a href="#">Sign In</a>
+                        <a href="/login">Sign In</a>
                     </span>
                 </p>
             </form>
