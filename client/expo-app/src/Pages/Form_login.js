@@ -1,34 +1,40 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 // import picture
-import logo from '../logo.svg';
-import pict from '../Asset/5618169.jpg';
+import pict from "../assets/konten-login.jpg";
 
 // import component
-import Login from '../components/Login.js';
+import Login from "../components/Login.js";
+
+// import bootstrap
+import { Navbar, Container, Button, Row, Col, Card } from "react-bootstrap";
 
 // css file
-import '../css/login.css';
+import "../css/loginForm.css";
 
 const from_login = () => {
-    return (
-        <div>
-            <nav className='navbar'>
-                <div className='kotak'>
-                    <img src={logo} alt="Logo Aplikasi"></img>
-                </div>
-                <button className='btn-home-login'>Home</button>
-            </nav>
-            <div className='container'>
-                <div className='gambar-login'>
-                    <img src={pict} alt="Gambar Konten"></img>
-                </div>
-                <div className='form-login'>
+  return (
+    <div className="loginForm">
+        <Navbar expand="lg" className="navbar">
+            <Container fluid>
+            <Navbar.Brand href="#">
+                <img src={pict} alt="logo" className="logo"/>
+            </Navbar.Brand>
+                <Button variant="light" className="buttonHome">Home</Button>
+            </Container>
+        </Navbar>
+        <Container fluid="xl" className="konten">
+            <Row>
+                <Col sm={7}>
+                    <img src={pict} alt="logo" className="size-image"/>
+                </Col>
+                <Col sm={5} className="login">
                     <Login />
-                </div>
-            </div>
-        </div>
-    )
-}
+                </Col>
+            </Row>
+        </Container>
+    </div>
+  );
+};
 
 export default from_login;
