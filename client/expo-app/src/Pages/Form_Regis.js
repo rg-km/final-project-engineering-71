@@ -1,31 +1,41 @@
-import React from 'react';
+import React from "react";
 
 // import picture
-import logo from '../logo.svg';
-import pict from '../assets/2868886.jpg';
-import RegisInput from '../components/Register'
+import pict from "../assets/2868886.jpg";
+
+import RegisInput from "../components/Register";
+
+// import bootstrap
+import { Navbar, Container, Button, Row, Col, Card } from "react-bootstrap";
 
 // css file
-import '../css/regis.css';
+import "../css/regis.css";
 
 const from_regis = () => {
-    return (
-        <div>
-            <nav className='navbar'>
-                <div className='kotak'>
-                    <img src={logo} alt="Logo Aplikasi"></img>
-                </div>
-                <button className='btn-home'>Home</button>
-            </nav>
-            <div className='container'>
-                <div className='form-regis'>
+  return (
+    <div className="regisForm">
+      <Navbar expand="lg" className="navbar">
+        <Container fluid>
+          <Navbar.Brand href="#">
+            <img src={pict} alt="logo" className="logo" />
+          </Navbar.Brand>
+          <Button variant="light" className="buttonHome">
+            Home
+          </Button>
+        </Container>
+      </Navbar>
+      <Container fluid="xl" className="kontenRegis">
+            <Row>
+                <Col sm={5} className="regis">
                     <RegisInput />
-                </div>
-                <div className='gambar-konten'>
-                    <img src={pict} alt="Gambar Konten"></img>
-                </div>
-            </div>
-        </div>
-)}
+                </Col>
+                <Col sm={7}>
+                    <img src={pict} alt="logo" className="size-image-regis"/>
+                </Col>
+            </Row>
+        </Container>
+    </div>
+  );
+};
 
 export default from_regis;
