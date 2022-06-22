@@ -15,10 +15,10 @@ import {
   faDoorOpen,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   return (
     <div className="sideNav">
-      <Nav defaultActiveKey="" variant="pills" className="flex-column">
+      <Nav defaultActiveKey={props.route} variant="pills" className="flex-column">
         <Nav.Item className="Logo">
           <Nav.Link href="/home">KARYAIN</Nav.Link>
         </Nav.Item>
@@ -39,7 +39,7 @@ const Sidebar = () => {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className="nav">
-          <Nav.Link eventKey="link-2">
+          <Nav.Link href="/dashboard">
             <span className="icon">
               <FontAwesomeIcon icon={faGripVertical} />
             </span>
