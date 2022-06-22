@@ -1,18 +1,25 @@
-import Card from './components/Card';
-import './App.css';
-import './index.css';
-import React from 'react';
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import Category from "./pages/Category";
+import NotFound from "./pages/404";
+import Home from "./pages/Home";
+import Register from "./pages/FormRegis";
 import Navbar from "./components/Navbar";
-import FormRegis from './Pages/Form_Regis';
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <Card />
-      <Navbar />;
-      <FormRegis />
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/category" element={<Category />} />
+        <Route exact path="/register" element={<Register />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,26 +1,107 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    padding: auto;
-    margin: auto;
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    font-size: 18px;
-    background: linear-gradient(to right, pink, violet, lightblue);   
-  }
-  
-  .App {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    image-orientation: from-image;
-  }
-  
-=======
+body {
+  background-color: #f8fafc;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 .poppins {
   font-family: 'Poppins', sans-serif;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.btn-custom {
+  background-color: #9767D3;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: medium;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active {
+  background-color: #ad7ee5;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 100vw;
+  margin-block: 0.2em;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 100vw;
+  border: 0.2em solid #f8fafc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #334155;
+}
+
+/* reset css input dan button */
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus,
+select:focus {
+  outline: none;
+  border: 1px solid #9767D3;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.form-control,
+.form-select {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border: 1px solid #9767D3;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn {
+  border: none !important;
+}
+
+.btn:focus,
+.btn:active,
+.btn:hover {
+  outline: none !important;
+  box-shadow: none !important;
 }

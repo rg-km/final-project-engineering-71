@@ -1,3 +1,7 @@
+/* navbar custom */
+nav {
+    backdrop-filter: blur(10px);
+}
 .navbar .navbar-brand {
     font-size: 26px;
 }
@@ -7,5 +11,9 @@
 }
 .navbar .navbar-nav .nav-item .nav-link.active {
     color: #8142D0;
-    font-weight: 500;
+}
+.navbar .navbar-toggler,
+.navbar .navbar-toggler:active,
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
 }

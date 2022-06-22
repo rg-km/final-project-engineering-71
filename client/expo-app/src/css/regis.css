@@ -1,90 +1,40 @@
-body {
+.register {
   height: 100vh;
   background: linear-gradient(to right, #9767D3 50%, #F8FAFC 50%);
+  z-index: 9999;
+  position: relative;
 }
 
-.navbar {
-  margin-top: 5vh;
-  height: 8vh;
-  display: flex;
-  align-items: center;
-}
-.navbar .kotak {
-  width: 80%;
-}
-.navbar .kotak img {
-  border: 1px solid #000;
-  float: left;
-  height: 8vh;
-  width: 5vw;
-  border-radius: 50%;
-  margin-left: 10vw;
-}
-.navbar .btn-home {
-  width: 8vw;
-  height: 5vh;
-  background-color: #9767D3;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 100px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  height: 65vh;
-  width: 80%;
-  margin-top: 5%;
-  margin-left: 10%;
-  border-radius: 10px;
-  background-color: #ffffff;
-}
-.container .form-regis {
-  width: 40vw;
-  min-height: 40vh;
-}
-.container .gambar-konten {
-  width: 70%;
-}
-.container .gambar-konten img {
+.illustration-register {
   width: 100%;
   height: 100%;
 }
 
-.registrasiForm {
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  width: 75%;
-  height: 100%;
-  margin-left: 12%;
-  font-weight: 500;
+@media screen and (max-width: 768px) {
+  .register {
+    height: auto;
+    padding: 30px 0 30px 0;
+  }
+  .illustration-register {
+    display: none;
+  }
 }
-.registrasiForm p {
-  text-align: center;
-}
-.registrasiForm input {
-  height: 30px;
-  margin-top: 2%;
-  margin-bottom: 3%;
-  border-radius: 5px;
-}
-.registrasiForm button {
-  margin: 2% 0 3% 30%;
-  width: 40%;
-  height: 30px;
+
+.btn-submit {
+  width: 35%;
+  height: 40px;
   background-color: #9767D3;
   color: #FFFFFF;
   border: none;
   border-radius: 100px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .instruction {
   font-size: 0.6rem;
   border-radius: 0.5rem;
-  margin-top: -10px;
+  margin-top: 5px;
+  margin-bottom: -5px;
   background: #000;
   color: #fff;
   padding: 0.25rem;
