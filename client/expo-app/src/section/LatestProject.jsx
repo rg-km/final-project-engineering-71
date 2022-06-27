@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import axios from "axios";
 
 import Card from "../components/Card";
+import datas from "../api/LatestProject";
 
 export default function LatestProject() {
   // const [card, setCard] = React.useState([]);
@@ -11,7 +12,7 @@ export default function LatestProject() {
   //   setCard(res.data.data);
   // };
 
-  // const listCard = card.map((item, index) => {
+  // const listProject = card.map((item, index) => {
   //   return (
   //     <Card
   //       key={index}
@@ -28,17 +29,31 @@ export default function LatestProject() {
   //   getCard();
   // }, []);
 
+  const listProject = datas.Project.map((item) => {
+    return (
+      <Card
+        key={datas.Project.id}
+        image={item.imgSrc}
+        username={item.author.fullname}
+        title={item.title}
+        category={item.category}
+        description={item.description}
+      />
+    );
+  });
+
   return (
     <div
-      className="container"
+      className="container poppins"
       style={{ marginTop: "80px", marginBottom: "100px" }}
     >
-      <h2 className="text-center" style={{ color: "#8142D0" }}>
-        Latest Project
-      </h2>
+      <div className="text-center">
+        <h3 style={{ color: "#8142D0" }}>Latest Project</h3>
+        <p>the latest list of student projects</p>
+      </div>
 
-      <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 mt-5 mb-5 justify-content-center">
-        <Card />
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 my-5 justify-content-center">
+        {listProject}
       </div>
 
       <center>

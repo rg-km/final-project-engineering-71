@@ -1,7 +1,16 @@
-.bg-regis {
-    background: linear-gradient(to right, #d7c7eb 50%, #ffffff 50%);
-    border-radius: 10px;
-    border: none
+.register {
+    position: relative;
+    height: max-content;
+    min-height: 100vh;
+    background: linear-gradient(to right, #9767D3 50%, #f8fafc 50%);
+    z-index: 9999;
+}
+
+.bg-purple {
+    background: #9767D3;
+}
+.bg-purple:hover {
+    background: #8143ce;
 }
 
 .btn-submit {
@@ -43,5 +52,3 @@
     color: red;
     margin-left: 0.25rem;
 }
-
-/*# sourceMappingURL=regis.css.map */

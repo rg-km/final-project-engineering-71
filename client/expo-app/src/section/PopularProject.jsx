@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import axios from "axios";
 
 import Card from "../components/Card";
+import datas from "../api/PopularProject";
 
 export default function PopularProject() {
   // const [card, setCard] = React.useState([]);
@@ -11,7 +12,7 @@ export default function PopularProject() {
   //   setCard(res.data.data);
   // };
 
-  // const listCard = card.map((item, index) => {
+  // const listPopular = card.map((item, index) => {
   //   return (
   //     <Card
   //       key={index}
@@ -28,17 +29,31 @@ export default function PopularProject() {
   //   getCard();
   // }, []);
 
+  const listPopular = datas.Popular.map((item) => {
+    return (
+      <Card
+        key={datas.Popular.id}
+        image={item.imgSrc}
+        username={item.author.fullname}
+        title={item.title}
+        category={item.category}
+        description={item.description}
+      />
+    );
+  });
+
   return (
     <div
-      className="container"
+      className="container poppins"
       style={{ marginTop: "80px", marginBottom: "100px" }}
     >
-      <h2 className="text-center" style={{ color: "#8142D0" }}>
-        Popular Project
-      </h2>
+      <div className="text-center">
+        <h3 style={{ color: "#8142D0" }}>Popular Project</h3>
+        <p>list of student popular projects</p>
+      </div>
 
-      <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 mt-5 mb-5 justify-content-center">
-        <Card />
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 my-5 justify-content-center">
+        {listPopular}
       </div>
 
       <center>

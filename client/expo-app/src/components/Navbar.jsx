@@ -24,7 +24,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light shadow-sm position-sticky sticky-top poppins">
+    <nav className="navbar navbar-expand-lg navbar-light shadow-sm fixed-top poppins">
       <div className="container">
         <a
           className="navbar-brand fw-bold text-uppercase"
@@ -68,10 +68,21 @@ export default function Navbar() {
                 Category
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className={`${
+                  isActive === "about" ? "nav-link active" : "nav-link"
+                }`}
+                onClick={() => setIsActive("about")}
+                to="/about"
+              >
+                About
+              </Link>
+            </li>
             {isLoggedIn ? (
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle"
                   href="##"
                   id="navbarDropdown"
                   role="button"
@@ -80,14 +91,14 @@ export default function Navbar() {
                 >
                   Halo, {user}
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="/dashboard">
+                    <a className="dropdown-item" href="/dashboard">
                       My Dashboard
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="##">
+                    <a className="dropdown-item" href="##">
                       Logout
                     </a>
                   </li>
@@ -96,31 +107,19 @@ export default function Navbar() {
             ) : (
               <>
                 <li className="nav-item">
-                  <Link
-                    className={`${
-                      isActive === "login" ? "nav-link active" : "nav-link"
-                    }`}
-                    onClick={() => setIsActive("login")}
-                    to="/login"
-                  >
+                  <Link className="nav-link" to="/login">
                     Login
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    className={`${
-                      isActive === "register" ? "nav-link active" : "nav-link"
-                    }`}
-                    onClick={() => setIsActive("register")}
-                    to="/register"
-                  >
+                  <Link className="nav-link" to="/register">
                     Register
                   </Link>
                 </li>
               </>
             )}
           </ul>
-          <i class="fa-solid fa-magnifying-glass"></i>&nbsp; Pencarian
+          <i className="fa-solid fa-magnifying-glass"></i>&nbsp; Pencarian
         </div>
       </div>
     </nav>

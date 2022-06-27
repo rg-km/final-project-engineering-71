@@ -87,9 +87,10 @@ const Register = () => {
 
   return (
     <div>
-      <h4 className="text-center mb-4">Register To Create Your Account</h4>
-      <form class="row g-3" onSubmit={handleSubmit}>
-        <div class="col-md-6">
+      <h4 className="text-center mb-4 poppins text-uppercase">Register to Karyain</h4>
+      <form className="row" onSubmit={handleSubmit}>
+        {/* fullname */}
+        <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Fullname
           </label>
@@ -117,7 +118,9 @@ const Register = () => {
             maksimal 100 karakter
           </p>
         </div>
-        <div class="col-md-6">
+
+        {/* username */}
+        <div className="mb-3">
           <label htmlFor="username" className="form-label">
             Username
           </label>
@@ -146,7 +149,8 @@ const Register = () => {
           </p>
         </div>
 
-        <div className="col-md-6">
+        {/* email */}
+        <div className="mb-3">
           <label htmlFor="email" className="form-label">
             Email
           </label>
@@ -174,7 +178,8 @@ const Register = () => {
           </p>
         </div>
 
-        <div className="col-md-6">
+        {/* password */}
+        <div className="mb-4">
           <label htmlFor="password" className="form-label">
             Password
           </label>
@@ -202,18 +207,19 @@ const Register = () => {
           </p>
         </div>
 
-        <div class="col-12 my-4 text-center">
-          <button type="submit" class="btn-submit">
+        {/* btn-submit */}
+        <div className="col-12 mb-4 text-center">
+          <button type="submit" className="btn-submit">
             Register
           </button>
         </div>
 
-        <p className="text-center">
+        <span className="text-center">
           Already have an account ?&nbsp;
           <Link to="/login" style={{ color: "#8142D0" }}>
             Sign in
           </Link>
-        </p>
+        </span>
       </form>
     </div>
   );

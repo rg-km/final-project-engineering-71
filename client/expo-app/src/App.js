@@ -5,6 +5,7 @@ import Category from "./pages/Category";
 import NotFound from "./pages/404";
 import Home from "./pages/Home";
 import Register from "./pages/FormRegis";
+
 import Navbar from "./components/Navbar";
 
 import "./App.css";
@@ -14,7 +15,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route index element={<Home />} />
         <Route exact path="/category" element={<Category />} />
         <Route exact path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />

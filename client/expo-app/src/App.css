@@ -103,5 +103,5 @@ select:focus {
 .btn:active,
 .btn:hover {
   outline: none !important;
-  box-shadow: none !important;
+  /* box-shadow: none !important; */
 }

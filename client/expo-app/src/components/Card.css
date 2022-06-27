@@ -1,0 +1,10 @@
+.card-custom {
+    border: 1px solid #8142D0 !important;
+}
+.card-custom:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important
+}
+.card-custom:hover .card-body .card-title {
+    color: #8142D0;
+    text-decoration: underline;
+}

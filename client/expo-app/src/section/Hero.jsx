@@ -4,9 +4,9 @@ import "./Hero.css";
 
 function Hero() {
   return (
-    <section className="background-overlay">
+    <section className="background-overlay poppins" style={{ marginTop: "65px" }}>
       <div className="container d-flex justify-content-center align-items-center h-100">
-        <div className="col-lg-6 text-center">
+        <div className="col-lg-7 text-center">
           <p className="lead mb-4">
             Quickly design and customize responsive mobile-first sites with
             Bootstrap, the world’s most popular front-end open source toolkit,
