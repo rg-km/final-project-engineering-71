@@ -10,7 +10,10 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 // import css
 import '../css/form_project.css'
 
+import { useNavigate } from "react-router-dom";
+
 function Create_Project() {
+  let navigate = useNavigate();
 
   // useState form
   const [title, setTitle] = useState("");
@@ -26,16 +29,27 @@ function Create_Project() {
     console.log(description);
   }, [title, owner, Category, description]);
 
+  const handleCreate = async (e) => {
+    e.preventDefault();
+
+    console.log(poster)
+    console.log(e.target.file)
+    // post ke API
+
+    navigate('/dashboard');
+      
+  }
+
   return (
     <Container fluid>
       <Row>
         <Col sm={2} style={{ padding: 0 }}>
-          <Sidebar />
+          <Sidebar route='/dashboard'/>
         </Col>
         <Col>
         <h3>Let's Upload Your Work to The World Wide</h3>
         <h5>Welcome <span>Riko Bediatra</span></h5>
-          <Form>
+          <Form onSubmit={handleCreate}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Title</Form.Label>
               <Form.Control 
@@ -75,7 +89,7 @@ function Create_Project() {
                 onChange={(e) => setPoster(e.target.value)}
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button className="btn-create" variant="primary" type="submit">
               Create
             </Button>
           </Form>
