@@ -1,5 +1,6 @@
 import React from "react";
 import {useRef, useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
 // validasi dengan regex
@@ -13,11 +14,9 @@ const USERNAME_REGEX = /^[a-z0-9_-]{3,10}$/
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
 
-
-
-
 const Register = () => {
     const userReff = useRef();
+    let navigate = useNavigate();
 
     // useState name
     const [name, setName] = useState('');
@@ -47,33 +46,19 @@ const Register = () => {
     // useEffect saat name, username, email, password berubah
 
     useEffect(() => {
-        const RESULT = NAME_REGEX.test(name);
-        console.log(RESULT);
-        console.log(name);
-        setValidName(RESULT);
-    }, [name]);
-
-    useEffect(() => {
-        const RESULT = USERNAME_REGEX.test(user);
-        console.log(RESULT);
+        const nameValid = NAME_REGEX.test(name);
+        setValidName(nameValid);
+        const userValid = USERNAME_REGEX.test(user);
         console.log(user);
-        setValidUser(RESULT);
-    }, [user]);
+        console.log(userValid);
+        setValidUser(userValid);
+        const emailValid = EMAIL_REGEX.test(email);
+        setValidEmail(emailValid);
+        const passwordValid = PASSWORD_REGEX.test(password);
+        setValidPassword(passwordValid);
+    }, [name, user, email, password]);
 
-    useEffect(() => {
-        const RESULT = EMAIL_REGEX.test(email);
-        console.log(RESULT);
-        console.log(email);
-        setValidEmail(RESULT);
-    }, [email]);
-
-    useEffect(() => {
-        const RESULT = PASSWORD_REGEX.test(password);
-        console.log(RESULT);
-        console.log(password);
-        setValidPassword(RESULT);
-    }, [password]);
-
+    
     // handle untuk submit
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -99,6 +84,8 @@ const Register = () => {
             })
             console.log('berhasil');
             // ganti halaman
+            navigate('/login');
+
             
         } catch (error) {
             console.log(error);
@@ -107,7 +94,7 @@ const Register = () => {
 
     return (
         <div>
-            <h3>Register To Create Your Account</h3>
+            <h4>Register To Create Your Account</h4>
             <form className="registrasiForm" onSubmit={handleSubmit}>
                 {/* Fullname */}
                 <label htmlFor="name">
